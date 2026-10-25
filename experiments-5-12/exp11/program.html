@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>Simple JavaScript Program</title></head>
+<body>
+<p id="output">0</p><button id="increment-button" type="button">Increment</button>
+<script>
+const output = document.getElementById('output');
+const button = document.getElementById('increment-button');
+let count = 0;
+button.addEventListener('click', () => { count += 1; output.textContent = String(count); });
+</script>
+</body></html>
