@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') { steps { checkout scm } }
+        stage('Build Java') {
+            steps {
+                sh 'mkdir -p build'
+                sh 'javac -d build experiments-5-12/exp05/Hello.java'
+            }
+        }
+        stage('Run') { steps { sh 'java -cp build Hello' } }
+    }
+}
